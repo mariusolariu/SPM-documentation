@@ -295,8 +295,15 @@ According to Sommerville\cite{sommerville2010software} the \ac{SDM} can categori
 	\subsection{Unified Modeling Language}
 	According to Martin Fowler \cite{fowler2004uml} \ac{UML} "is a family of graphical notations [...] that help in describing and designing software systems, particularly software systems built using the object-oriented (OO) style". From this family of diagrams we will be using only \emph{Class Diagrams}  and \emph{Use Cases}. Class Diagrams represent "the types of objects in system and the various [...] relationships that exist among them" . In the requirements  part we have used \emph{Use Cases} to capture the functional requirements of the app.
 	\subsection{Design Patterns}
-	Design patterns represent common used solutions to commonly occurring  problems when developing OO software systems. In other words, a DP is a template for how to solve a software problem.
+	Design patterns represent solutions to commonly occurring  problems when developing OO software systems. In other words, a DP is a template for how to solve a software development problem.
 	\subsubsection{Facade}
+	The \emph{Facade} pattern provides a higher-level interface that eases the interaction with a complex subsystem. In many cases to achieve  certain tasks we need to use multiple classes from a package (or subsystem) and to use their services in an certain order, for this situations we can use \emph{Facade} pattern. This pattern promotes decoupling between client and product(subsystem) and it is often used in combination with the \emph{Singleton} pattern.
+	
+	\begin{figure}[H]
+		\includegraphics[scale=0.9]{./imgs/Facade}
+		\caption{Example of applicability for Facade pattern  \cite{gamma1995design}}
+	\end{figure}
+	
 	\subsubsection{Factory Method}
 	\subsubsection{Singleton}
 
