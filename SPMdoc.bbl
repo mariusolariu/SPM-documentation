@@ -41,4 +41,9 @@ M.~Fowler, \emph{UML distilled: a brief guide to the standard object modeling
   language}.\hskip 1em plus 0.5em minus 0.4em\relax Addison-Wesley
   Professional, 2004.
 
+\bibitem{gamma1995design}
+E.~Gamma, \emph{Design patterns: elements of reusable object-oriented
+  software}.\hskip 1em plus 0.5em minus 0.4em\relax Pearson Education India,
+  1995.
+
 \end{thebibliography}

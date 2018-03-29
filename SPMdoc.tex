@@ -297,15 +297,28 @@ According to Sommerville\cite{sommerville2010software} the \ac{SDM} can categori
 	\subsection{Design Patterns}
 	Design patterns represent solutions to commonly occurring  problems when developing OO software systems. In other words, a DP is a template for how to solve a software development problem.
 	\subsubsection{Facade}
-	The \emph{Facade} pattern provides a higher-level interface that eases the interaction with a complex subsystem. In many cases to achieve  certain tasks we need to use multiple classes from a package (or subsystem) and to use their services in an certain order, for this situations we can use \emph{Facade} pattern. This pattern promotes decoupling between client and product(subsystem) and it is often used in combination with the \emph{Singleton} pattern.
+	The \emph{Facade} pattern provides a high-level interface that eases the interaction with a complex subsystem. A real-life example of this pattern is when a client wants to place an order to a company (that does not have an online solution for this).  First, the client browses a catalogue to search for products codes/names. Next, client   calls a customer service representative (acts as a Facade) that register the order, creates the bill and gives the destination address to the shipping department. Coming back to the software domain, this pattern promotes decoupling between client and subsystem(s) but in the same time it does not prevent clients to interact directly with the subsystem. Facade pattern is often used in combination with the \emph{Singleton} pattern.
 	
 	\begin{figure}[H]
-		\includegraphics[scale=0.9]{./imgs/Facade}
+		\includegraphics[scale=0.8]{./imgs/Facade}
 		\caption{Example of applicability for Facade pattern  \cite{gamma1995design}}
 	\end{figure}
 	
-	\subsubsection{Factory Method}
+	\subsubsection{Abstract Factory}
+		Provides an interface for creating and managing families of objects without specifying their concrete classes \cite{gamma1995design}. For example when we design an app that has to change the look and feel of its GUI widgets according to user's preferences (the user can choose the look and feel at runtime). Although the GUI appearance will change, the functionality of widgets will remain the same. In the part of the code where the functionality of the widgets is implemented depends we would end up with a lot of \emph{ifs} that instantiate handle the concrete widget classes and more important with dependencies to that handle which widget classes. To solve the problem we could create an factory that would handle the widget instantiation and changing the widgets would mean just to change the factory that creates and retrieves them.\\
+		By using this pattern we obtain independence on how products are created and represented, low coupling between clients and products. 
+		\begin{figure}[H]
+	
+			\includegraphics[scale=0.75]{./imgs/Factory}
+			\caption{Example of applicability for Abstract Factory pattern \cite{gamma1995design}}
+		\end{figure}
 	\subsubsection{Singleton}
+	By applying the Singleton pattern to a class we ensure that the respective class has only one instance and there is provided a global point of access to this instance. Often, in an app we need to have only one instance of a class, e.g. : the class that handles the connection to database, the class that handles the printing jobs, a window manager etc. . This pattern is often used in conjunction with other patterns like \emph{Abstract Facory} or \emph{Facade}.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.9]{./imgs/Singleton}
+		\caption{Only one instantiation of Database class allowed}
+	\end{figure}
 
 \subsection{Concrete application of the SDM}
 
@@ -315,6 +328,7 @@ According to Sommerville\cite{sommerville2010software} the \ac{SDM} can categori
 \bibliographystyle{ieeetran}
 
 %the place where references will appear in output pdf
-\bibliography{SPMBib}
+%good practice: bib name should be the same to the .tex file
+\bibliography{SPMdoc}
 
 \end{document}
