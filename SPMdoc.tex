@@ -33,7 +33,7 @@
   tabsize=3
 }
 
-
+\usepackage{pdfpages}
 %margins as described in "Ghid de redactare Diploma Licenta" by  Mihai Micea
 \usepackage[top=1.37in, bottom=1.18in, left=1.18in, right=0.78in]{geometry}
 
@@ -184,11 +184,12 @@ Dr. Răzvan \textsc{Cioargă} % Supervisor's Name
 \newpage
 
 \section{Description of the project}
-	Nowadays software runs the world but most of the software solutions are designed for healthy people. Thus,  the visually impaired people are somehow left aside. However, recently things have begun to change and since everyone now owns a smartphone, there have been developed a series of apps for the visually impaired people. Most successful apps are \emph{Be My Eyes} (establishes a live video connection with an volunteer that describes the surroundings to the blind person), BeSpecular(the visually impaired person takes a photo, attaches a voice message to it and sends it to a volunteer that provides help) or the most helpful (in my opinion) \emph{Seeing Ai} from Microsoft. The later \ac{app} is an assistant which is able to recognize "saved" persons and describe their emotions, read text aloud from labels/books etc., provide description of images from other \ac{apps} (e.g. Facebook) by importing them into \emph{Seeing Ai} or scene description. However, it is developed only for \emph{iOS}. The other apps in this sector have a free and limited variant and in order to make use of all the features the user has to purchase it. \\
+	Nowadays software runs the world but most of the software solutions are designed for healthy people. Thus,  the visually impaired people are somehow left aside. However, recently things have begun to change and since everyone now owns a smartphone, there have been developed a series of apps for the visually impaired people. Most successful apps are \emph{Be My Eyes} (establishes a live video connection with an volunteer that describes the surroundings to the blind person), BeSpecular(the visually impaired person takes a photo, attaches a voice message to it and sends it to a volunteer that provides help) or the most helpful (in my opinion) \emph{Seeing Ai} from Microsoft. The later \ac{app} is an assistant which is able to recognize "saved" persons and describe their emotions, read text aloud from labels/books etc., provide description of images from other \ac{apps} (e.g. Facebook) by importing them into \emph{Seeing Ai} or scene description. However, it is developed only for \emph{iOS}. Apart from these, there are a variety of mobile assistan apps for the visually impaired people but most of them  have a free and limited variant and in order to make use of all the features the user has to purchase it. \\
 	
-	To address the above mentioned drawbacks an app should be developed for this sector, namely \emph{HelpMeSee}. This app should be an mobile personal assistant  that will offer a different perspective compared to what's on the market at this point. If this app will be a success then
-	
+	To address the issue with apps that need to be purchased and taking into account that the visually impaired people are in general in need of money (unless you are Andreea Bocelli) an free mobile assistant app will be developed, namely \emph{HelpMeSee}. This app  will offer a different perspective compared to what is on the market at this point. To achieve the aforementioned objectives\emph{HelpMeSee} will make use of cyber-foraging ("a technique to enable mobile devices to extend their computing power" \cite{lewis2016decision})) using the cloud resources provided by Google or Microsoft. We prefer to use these solutions because they are the work of more experienced developers and the purpose is not to  "reinvent the wheel" (e.g. implement proper variants of speech recognition, extracting a description from an image etc.). Also, cyber-foraging has the proven benefits: extends the computing power, saves storage space and extends battery life of mobile devices.
+
 	%TODO add logo of the app
+	%TODO  as motivation, add the benefits of cyber-foraging	
 	
 	\newpage
 
@@ -197,7 +198,7 @@ Dr. Răzvan \textsc{Cioargă} % Supervisor's Name
 \subsection{Functional requirements}
 
 \subsubsection{Directions}
-	The app should provide assistance to the blind user when he/she tries to get to a location. The user will be guided using spoken descriptions (e.g. "Go straight 100 meters", "You are about to cross the street").
+	The app should provide assistance to the blind user when he/she tries to get to a location. The user will be guided using voice instructions (e.g. "Go straight 100 meters", "You are about to cross the street").
 	
 \subsubsection{Location}
 	The user can ask the app to retrieve his current location (e.g. "Bld. Industriei, nr. 6) and has the possibility to share his current location to a list of predefined friends.
@@ -219,35 +220,35 @@ Dr. Răzvan \textsc{Cioargă} % Supervisor's Name
 
 
 \subsubsection{Extensibility}
-	Based on the feedback received from users the app can be extended with new features without great effort. Thus, the architecture of the app must be chosen carefully.
+	Based on the feedback received from users the app can be extended easily with new features without great effort. Thus, the architecture of the app must be chosen carefully.
 
 
 \section{Specifications}
 
 \subsection{Directions}
-	In order to implement this part the app will use \emph{Google Directions API} that will provide the fastest walking route from A to B. The fastest route is provided in json file having a certain format. The user is notified from 20 to 20m with spoken instructions about the itinerary.
+	In order to implement this feature the app will use \emph{Google Directions API} that will provide the fastest walking route from A to B. The fastest route is provided in json file having a certain format. The user is notified from 20 to 20m with spoken instructions about the itinerary.
 
 \subsection{Location}
-	Again, \emph{Google Directions API} and the \textbf{G}lobal \textbf{P}ositioning \textbf{S}ystem (GPS) of the phone will be used to retrieve the location of the user. The location is displayed on the phone and read aloud. Also, using the voice command "friends" the app will send user's location to a list of predefined friends using the \textbf{S}hort \textbf{M}essaging \textbf{S}ervice(SMS). To add a friend in this list the user should use the voice command "add friend" followed by the name of the friend and his/her phone number.
+	Again, \emph{Google Directions API} and the \textbf{G}lobal \textbf{P}ositioning \textbf{S}ystem (GPS) of the phone will be used to retrieve the location of the user. The location is displayed on the phone and read aloud. Also, using the voice command "friends" the app will send user's location to a list of predefined friends using the \textbf{S}hort \textbf{M}essaging \textbf{S}ervice(SMS). To add a friend in this list the user should use the voice command "add friend" followed by the name of the friend. If the user can not be found in the contact list then the user is asked to provide his/her phone number.
 	
 \subsection{Scene description}
-	\emph{Microsoft Cognitive Services} provides \emph{Computer Vision API} that can be used to distill actionable information from images. Therefore, the user takes a photo and then the app will communicate using \textbf{Re}presentational \textbf{S}tate \textbf{T}ransfer (REST) with Microsoft cloud servers to get the description of the image.
+	\emph{Microsoft Cognitive Services} provides \emph{Computer Vision API} that can be used to distil actionable information from images. Therefore, the user takes a photo and then the app will communicate using \textbf{Re}presentational \textbf{S}tate \textbf{T}ransfer (REST) with Microsoft cloud services, namely to get a meaningful description from an image.
 	
 \subsection{Text recognition}
-	The same \emph{Computer Vision API} can be used to detect and extract text from an image.
+	The same Microsoft cloud services can be used to detect and extract text from an image.
 	
 \subsection{Usability}
-	Each screen of the app will have a button in the bottom-right corner, the "speech input" button. Thus, the user has the possibility to access a feature without having to navigate between the screens. For example if the user is currently walking to a destination but at some point decides to get info about surroundings, he takes a photo - gets the description, and then continues the journey - all this without leaving the directions screen and not being force to abandon one activity in order to perform another.\\
+	Each screen of the app will have a button in the bottom-right corner, the \emph{processCommandButton} button (processes voice commands). Thus, the user has the possibility to access a feature without having to navigate between the back and forth screens. For example if the user is currently walking to a destination but at some point decides to get some information about surroundings he has to use the \emph{scene description} feature, thus will press the \emph{processCommandButton} button speak "Speech Description" and the according screen will be launched. In this manner the user is not forced to abandon one activity in order to perform another.\\
 	
-	The widgets size will be slightly bigger than for a normal app. Also, for a simple \emph{tap} the widget name will be spoken out loud and for \emph{double-tap} the widget functionality will be accessed.
+	The widget's size will be slightly bigger than for a normal app in order to facilitate the access to it. Also, for a simple \emph{tap} the widget name will be spoken out loud and for \emph{double-tap} the widget functionality will be accessed.
 
 \subsection{Maintainability}
-	There will be implemented a series of design patterns known for their  positive effect on this maintainability alongside good coding practices (e.g comments, descriptive attributes/methods/class names, reduced size methods etc.). The Factory Method will be used in order to reduce coupling between client classes(e.g. Controller/Presenter classes from Model-View-Presenter architecture) and those which communicate with the cloud services. \\
+	There will be implemented a series of design patterns known for their  positive effect on this maintainability alongside good coding practices (e.g comments, descriptive attributes/methods/class names, reduced size methods etc.). The Factory Method will be used in order to reduce coupling between client classes (e.g. the ones that implement the business logic) and those which communicate with the cloud servers to provide services (product classes). \\
 	
-	For accessing each subsystem (i.e. directions, locations, scene description, text recognition) the Facade combined with Singleton pattern will be used. By doing so we do not need to reimplement the functionality of the "speech input" button (present in each screen), thus no code duplication. Also the Facade pattern will allow us to modify the subsystems without having to worry where they are used (since the access to them is through the Facade).
+	For accessing each subsystem (i.e. directions, locations, scene description, text recognition) the Facade combined with Singleton pattern will be used. By doing so we do not need to reimplement the functionality of the  button (present in each screen), thus no code duplication. Also the Facade pattern will allow us to introduce the much desired decoupling between clients and products.
 	
 \subsection{Usability}
-	The architecture for \emph{HelpMeSee} is going to be \textbf{M}odel \textbf{V}iew \textbf{P}resenter (MVP). All the subsystems that communicate with the network and implement business logic will be a part of the \emph{model}. A \emph{view} will contain just the mappings between the UI elements and the objects that control them (no logic is added, for example handling user input actions). The purpose of the a view(screen) is just to display data and notify the \emph{presenter} about user's actions. Next, each \emph{view} will have a presenter, i.e. a interface, that will interact with the model in order to bring data to the view, modify the state of the model and to apply the UI logic.
+	The architecture for \emph{HelpMeSee} is going to be \textbf{M}odel \textbf{V}iew \textbf{P}resenter (MVP). All the data that needs to be persisted will be a part of the \emph{model}. A \emph{view} will contain just the mappings between the UI elements and the objects that control them (no logic is added, for example handling user input actions). The purpose of the a view(screen) is just to display data and notify the \emph{presenter} about user's actions. Next, each \emph{view} will have a presenter that will interact with the model in order to bring data to the view, modify the state of the model, apply UI logic and most important - implement the business logic .
 
  
 \begin{figure}[H] 
@@ -280,7 +281,7 @@ According to Sommerville\cite{sommerville2010software} the \ac{SDM} can categori
 
 \subsection{Theoretical Background}
 
-	\subsection{Model-View-Presenter}
+	\subsubsection{Model-View-Presenter}
 	
 	\begin{wrapfigure}{r}{0.6\textwidth}
 		\centering
@@ -288,13 +289,14 @@ According to Sommerville\cite{sommerville2010software} the \ac{SDM} can categori
 		\caption{MVP architecture \cite{MVPPhoto}}
 	\end{wrapfigure}
 	
-	 By using the \ac{MVP} architecture we maximize the code that can be tested with unit tests, separate business logic from UI (thus we adhere to OOP goals of low coupling, high cohesion or \emph{Single Responsability Principle}).  This architecture is based on three types of classes: Model, View and Presenter. The \emph{Model} is responsible for business logic and state of persisted data, \emph{View} for rendering UI elements and the \emph{Presenter} works like a glue between the two (i.e. changes the model data state, fetches data to \emph{View}).\\
+	 By using the \ac{MVP} architecture we maximize the code that can be tested with unit tests, separate business logic from UI (thus we adhere to OOP goals of low coupling, high cohesion or \emph{Single Responsability Principle}) and  end up with a codebase that is readable and maintainable.  This architecture is based on three types of classes: Model, View and Presenter. The \emph{Model} is responsible for the state of data, a \emph{View} for rendering UI elements and handling input/output from/to the user and the \emph{Presenter}  implements the business logic (moreover, works like a glue between the \emph{View} and \emph{Model}).\\
 	
 	 In particular for Android development, we will not end up with huge \emph{Activity} classes (they represent screens). Very often Android programming beginners end up with big Activity classes since there is not a clear distinction if such a class is an UI element or a business logic class, however, we will not detail further on this issue.
 	
-	\subsection{Unified Modeling Language}
-	According to Martin Fowler \cite{fowler2004uml} \ac{UML} "is a family of graphical notations [...] that help in describing and designing software systems, particularly software systems built using the object-oriented (OO) style". From this family of diagrams we will be using only \emph{Class Diagrams}  and \emph{Use Cases}. Class Diagrams represent "the types of objects in system and the various [...] relationships that exist among them" . In the requirements  part we have used \emph{Use Cases} to capture the functional requirements of the app.
-	\subsection{Design Patterns}
+	\subsubsection{Unified Modeling Language}
+	According to Martin Fowler \cite{fowler2004uml} \ac{UML} "is a family of graphical notations [...] that help in describing and designing software systems, particularly software systems built using the object-oriented (OO) style". From this family of diagrams we will be using only \emph{Class Diagrams}  and \emph{Use Cases}. Class Diagrams represent "the types of objects in system and the various [...] relationships that exist among them" \cite{fowler2004uml}. \emph{Use Cases} represent "a technique for capturing the functional requirements of the system"\cite{fowler2004uml} by using a graphical representation and  short instruction-like naratives (describe interactions of the users and system).
+
+	\subsubsection{Design Patterns}
 	Design patterns represent solutions to commonly occurring  problems when developing OO software systems. In other words, a DP is a template for how to solve a software development problem.
 	\subsubsection{Facade}
 	The \emph{Facade} pattern provides a high-level interface that eases the interaction with a complex subsystem. A real-life example of this pattern is when a client wants to place an order to a company (that does not have an online solution for this).  First, the client browses a catalogue to search for products codes/names. Next, client   calls a customer service representative (acts as a Facade) that register the order, creates the bill and gives the destination address to the shipping department. Coming back to the software domain, this pattern promotes decoupling between client and subsystem(s) but in the same time it does not prevent clients to interact directly with the subsystem. Facade pattern is often used in combination with the \emph{Singleton} pattern.
@@ -317,18 +319,145 @@ According to Sommerville\cite{sommerville2010software} the \ac{SDM} can categori
 	\begin{figure}[H]
 		\centering
 		\includegraphics[scale=0.9]{./imgs/Singleton}
-		\caption{Only one instantiation of Database class allowed}
+		\caption{Only one Database connection is needed per system}
 	\end{figure}
 
 \subsection{Concrete application of the SDM}
+	Basically, the HelpMeSee app is centered around the navigation feature, i.e. helping the visually impaired person to get to  a certain destination, as can be seen in the \emph{Use Case} diagram too. Thus, the user can choose to use the \emph{Directions} feature and at any point in time to switch shortly to use another feature (while on his way to destination) using the \emph{processCommandButton} (present in every screen). By doing so we improve the usability of the app because the user does not have to quit his current activity (navigation) to get extra information about environment.
 
+	\paragraph{HelpMeSee use cases:\\}
+	
+	
+	\paragraph{Get to location B\\}
+	
+	\begin{enumerate}
+		\item The user launches the \emph{Directions} screen from the \emph{Main-Menu} screen.
+		\item The user provides destination location using text or voice input.
+		\item The app renders the path to destination.
+		\item The app notifies the user that everything is set-up and good to go.
+		\item As user moves the app notifies him/her with voice instructions.
+	\end{enumerate}
+		
+	\paragraph{Where am I?}
+
+	\begin{enumerate}
+		\item The user launches the \emph{Location} screen from \emph{Main-Menu} screen or through \emph{processCommandButton}.
+		
+		\item The app. displays user location on the screen and reads it out loud.
+		
+		\item The user can choose to send his location to a list of friends.
+		\begin{enumerate}
+			\item The user can add a new friend to the "friends list"
+			\item The user can play again the reading of location by  tapping the half upper part of the screen twice.	
+		\end{enumerate}
+					
+
+	\end{enumerate}			
+	
+	
+	\paragraph{Text Detection}
+
+		\begin{enumerate}
+			\item The user launches the \emph{TextDetection} screen from \emph{Main-Menu} screen
+			
+			\item The app will start a timer of 5 seconds, when it expires it will take a photo
+				\begin{enumerate}
+					\item The user can take the photo before the timer expires using \emph{takePictureButton} 				
+				
+				\end{enumerate}
+			
+			\item The app reads loud the detected text
+			
+			\item User can take another photo or replay the previous detected text
+						
+		\end{enumerate}			
+	
+	\paragraph{Scene Description\\}
+	
+		The interactions between the system and the user are the same as with those described in the \emph{Text Detection} scenario. The only difference is represented by the backend algorithm that processes the photo.
+
+
+	\includepdf[pages=2]{UML.pdf}
+
+
+%\begin{figure}[H]
+	\includepdf[pages=1,angle=-90]{UML.pdf}
+	%\includegraphics[scale=0.3, angle = -90]{./imgs/CD}
+	%\caption{Class diagram of most important entities from HelpMeSee app}
+%\end{figure}
+
+ \paragraph{Model-View-Presenter\\}
+ 
+ \subparagraph{Views\\}
+ 
+   \emph{HelpMeSee} has 5 screens: \emph{Main-Menu}, \emph{Directions}, \emph{Locations}, \emph{Scene Description} and \emph{Text Recognition}. For each view there is defined a set of operations  that they need to handle, by implementing the following interfaces: \emph{MvpView}, \emph{\textbf{[ScreenName]}View} and \emph{\textbf{[ScreenName]}Listener} . For example, the \emph{Main-Menu} screen uses the following interfaces: \emph{MvpView}, \emph{MainMenuScreenView} and \emph{MainMenuScreenListener}. \\
+   
+   \emph{MvpView} defines the two services that all the screens need to provide, namely: \emph{getViewState():Bundle} (a mapping of key-value pairs that describe the properties displayed on the screen at a certain point in time, e.g the text displayed on some widget) and \emph{getRootView():View} (usually the parent layout for an Android screen). These two operations are necessary to each \emph{Presenter} to implement the logic and to update the screen if necessary. Next, \emph{\textbf{[ScreenName]}View} defines the particular operations that the screen needs to handle, for instance the \emph{MainMenuScreenView} interface contains only \emph{+displayAppFeatures(features:List)} method. For each screen the associate listener is the \emph{Presenter} (implements \emph{\textbf{[ScreenName]}Listener)} that contains the logic for handling a certain user input (the responsability is took out from the screen).\\
+      
+    As can be seen above, the only responsibilities of \emph{Main-Menu} screen is to display data provided by someone else (i.e the Presenter) and to pass the user interactions with the screen to the presenter. By doing so we respect the MVP architecture requirements for a View. This approach is repeated for the other screens too.
+    
+  \subparagraph{Presenters\\}
+  	The purpose of presenters is to implement the business logic and since they are distinct for each screen there is no common interface. Moreover since no entity in the app depends on their interface (but rather, they depend on other entities) they are implemented as classes. As an example of presenter, the \emph{MainMenuPresenter} acts as bridge between the features that the app provides (entry point for using one of them). Consequently, the following snippet provides an overview of how the business logic that needs to be implemented.
+  	
+  	\begin{lstlisting}[caption = onFeatureSelected() mock]	
+  	
+  		public void onFeatureSelected(long id) {
+    	final AppFeaturesEnum selectedFeature = AppFeaturesEnum.valueOf(appFeaturesList.get((int) id));
+
+    	  //TODO : launch the selected feature
+    	  switch (selectedFeature) {
+      		case LOCATION:
+        		Log.i(MAIN_SCREEN_TAG, "Launch Location screen");
+        		break;
+
+      		case DIRECTIONS:
+       			Log.i(MAIN_SCREEN_TAG, "Launch DIRECTIONS screen");
+        		break;
+
+      		case SCENE_DESCRIPTION:
+        		Log.i(MAIN_SCREEN_TAG, "Launch SCENE_DESCRIPTION screen");
+        		break;
+
+      		case TEXT_RECOGNITION:
+        		Log.i(MAIN_SCREEN_TAG, "Launch TEXT_RECOGNITION screen");
+        		break;
+      
+     		default:
+        		Log.e(MAIN_SCREEN_TAG, "Feature doesn't exist!");
+    	  }
+  		}
+  	\end{lstlisting}
+  
+  \subparagraph{Model\\}
+  		For the moment the app does not need a proper model because the user never changes the state of the data (e.g. for instance it cannot change the directions for a certain route or change the text describing a scene in an image using user inputs).
+
+  \paragraph{Facade\\}
+  	As mentioned before in this document, in order to make the app more usable the user can give voice commands, these commands are for the moment the names of the features that the user wants to access: Location, Directions, Text Recognition, Scene Description. In each screen there will be the button \emph{processCommandButton} that will start the microphone for recording. After the command is decoded an action will be taken concordantly, e.g when on track to a destination user wants to obtain a "scene description" (it will launch \emph{SceneDescription} screen by pronouncing "scene description"). However, using this approach each presenter would end up "knowing" about the other features of the app (not to mention the duplicate code involved) and this would represent an escalation of the whole MVP architecture. In order to overcome this issue the \emph{Facade} pattern (implemented as a Singleton) is used having the following interface:
+  	
+  	\begin{figure}[H]
+  		\centering
+		\includegraphics[scale=1]{./imgs/FacadeImpl}  	
+  		\caption{Facade pattern concrete implementation}
+  	\end{figure}
+  	
+  	Now, the button will pass only the voice command (e.g. "Location") to the \emph{Facade} that will handle the ease the access to features and solves the coupling problem aforementioned.
+  	
+  	\paragraph{Abstract Factory\\}
+  	For each feature there is a package that provides the functionality. However, over it is not useful to instantiate over and over again the same objects or the clients to know about the specific classes that they need to instantiate. Therefore, an Abstract factory is defined for each package (e.g \emph{LocationFactory}, \emph{DirectionsFactory} etc, they can be seen in the UML diagram), and these factories will control and retrieve object instantiation for each class in a certain package. Also, they are implemented as singletons (since it doesn't make sense to have more than one factory per package) and will use a \emph{Object Pool} to retrieve the already created and reusable objects.
+  	
+  	\paragraph{Singleton\\}
+  	Singleton is one of the simplest and most useful design pattern and for our project was used for the factory classes and \emph{CommandProcessorFacade} class.
+    
 \printacronyms[include-classes=abbrev,name=Abbreviations]
 
-%style
-\bibliographystyle{ieeetran}
+
 
 %the place where references will appear in output pdf
 %good practice: bib name should be the same to the .tex file
 \bibliography{SPMdoc}
+
+%style
+\bibliographystyle{ieeetran}
+
 
 \end{document}

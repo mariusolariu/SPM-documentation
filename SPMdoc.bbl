@@ -21,6 +21,12 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{lewis2016decision}
+G.~A. Lewis, P.~Lago, and P.~Avgeriou, ``A decision model for cyber-foraging
+  systems,'' in \emph{Software Architecture (WICSA), 2016 13th Working
+  IEEE/IFIP Conference on}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2016,
+  pp. 51--60.
+
 \bibitem{brooks1987no}
 F.~Brooks and H.~Kugler, \emph{No silver bullet}.\hskip 1em plus 0.5em minus
   0.4em\relax April, 1987.

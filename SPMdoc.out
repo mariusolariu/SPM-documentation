@@ -19,10 +19,10 @@
 \BOOKMARK [2][-]{subsection.3.7}{Usability}{section.3}% 19
 \BOOKMARK [1][-]{section.4}{Software Design Methods}{}% 20
 \BOOKMARK [2][-]{subsection.4.1}{Theoretical Background}{section.4}% 21
-\BOOKMARK [2][-]{subsection.4.2}{Model-View-Presenter}{section.4}% 22
-\BOOKMARK [2][-]{subsection.4.3}{Unified Modeling Language}{section.4}% 23
-\BOOKMARK [2][-]{subsection.4.4}{Design Patterns}{section.4}% 24
-\BOOKMARK [3][-]{subsubsection.4.4.1}{Facade}{subsection.4.4}% 25
-\BOOKMARK [3][-]{subsubsection.4.4.2}{Abstract Factory}{subsection.4.4}% 26
-\BOOKMARK [3][-]{subsubsection.4.4.3}{Singleton}{subsection.4.4}% 27
-\BOOKMARK [2][-]{subsection.4.5}{Concrete application of the SDM}{section.4}% 28
+\BOOKMARK [3][-]{subsubsection.4.1.1}{Model-View-Presenter}{subsection.4.1}% 22
+\BOOKMARK [3][-]{subsubsection.4.1.2}{Unified Modeling Language}{subsection.4.1}% 23
+\BOOKMARK [3][-]{subsubsection.4.1.3}{Design Patterns}{subsection.4.1}% 24
+\BOOKMARK [3][-]{subsubsection.4.1.4}{Facade}{subsection.4.1}% 25
+\BOOKMARK [3][-]{subsubsection.4.1.5}{Abstract Factory}{subsection.4.1}% 26
+\BOOKMARK [3][-]{subsubsection.4.1.6}{Singleton}{subsection.4.1}% 27
+\BOOKMARK [2][-]{subsection.4.2}{Concrete application of the SDM}{section.4}% 28

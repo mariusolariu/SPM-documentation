@@ -20,10 +20,22 @@
 \contentsline {subsection}{\numberline {3.7}Usability}{4}{subsection.3.7}
 \contentsline {section}{\numberline {4}Software Design Methods}{5}{section.4}
 \contentsline {subsection}{\numberline {4.1}Theoretical Background}{6}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2}Model-View-Presenter}{6}{subsection.4.2}
-\contentsline {subsection}{\numberline {4.3}Unified Modeling Language}{6}{subsection.4.3}
-\contentsline {subsection}{\numberline {4.4}Design Patterns}{6}{subsection.4.4}
-\contentsline {subsubsection}{\numberline {4.4.1}Facade}{6}{subsubsection.4.4.1}
-\contentsline {subsubsection}{\numberline {4.4.2}Abstract Factory}{7}{subsubsection.4.4.2}
-\contentsline {subsubsection}{\numberline {4.4.3}Singleton}{8}{subsubsection.4.4.3}
-\contentsline {subsection}{\numberline {4.5}Concrete application of the SDM}{8}{subsection.4.5}
+\contentsline {subsubsection}{\numberline {4.1.1}Model-View-Presenter}{6}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Unified Modeling Language}{6}{subsubsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.3}Design Patterns}{6}{subsubsection.4.1.3}
+\contentsline {subsubsection}{\numberline {4.1.4}Facade}{6}{subsubsection.4.1.4}
+\contentsline {subsubsection}{\numberline {4.1.5}Abstract Factory}{7}{subsubsection.4.1.5}
+\contentsline {subsubsection}{\numberline {4.1.6}Singleton}{8}{subsubsection.4.1.6}
+\contentsline {subsection}{\numberline {4.2}Concrete application of the SDM}{8}{subsection.4.2}
+\contentsline {paragraph}{HelpMeSee use cases:\\}{9}{section*.2}
+\contentsline {paragraph}{Get to location B\\}{9}{section*.3}
+\contentsline {paragraph}{Where am I?}{9}{section*.4}
+\contentsline {paragraph}{Text Detection}{9}{section*.5}
+\contentsline {paragraph}{Scene Description\\}{9}{section*.6}
+\contentsline {paragraph}{Model-View-Presenter\\}{12}{section*.7}
+\contentsline {subparagraph}{Views\\}{12}{section*.8}
+\contentsline {subparagraph}{Presenters\\}{12}{section*.9}
+\contentsline {subparagraph}{Model\\}{13}{section*.10}
+\contentsline {paragraph}{Facade\\}{13}{section*.11}
+\contentsline {paragraph}{Abstract Factory\\}{13}{section*.12}
+\contentsline {paragraph}{Singleton\\}{13}{section*.13}
